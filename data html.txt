@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Admin</h2>
+
+    <!-- Navigation Tabs -->
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#student">Student</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#teacher">Teacher</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#classofstudent">Class of Student</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#subject">Subject</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#menu5">Menu 5</a>
+        </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content mt-3">
+        <!-- Home Tab -->
+        <div id="home" class="tab-pane fade show active">
+            <h3>HOME</h3>
+            <p>Welcome to the Admin Dashboard.</p>
+        </div>
+
+        <!-- Student Tab -->
+        <div id="student" class="tab-pane fade">
+            <h3>Student Menu</h3>
+            <div class="row">
+                <div class="col-sm-3">
+                    <!-- Navigation menu for Student functionalities (vertical) -->
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item"><a class="nav-link active" data-bs-toggle="pill" href="#search">Search</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#grades">Update</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#attendance">Add</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#assignments">Add Student into Class</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-9">
+                    <!-- Tab content for Student Menu -->
+                    <div class="tab-content">
+                        <!-- Search Tab Content -->
+                        <div id="search" class="tab-pane fade show active">
+                            <h4>Search Students</h4>
+                            <div class="mb-3">
+                                <input type="text" id="searchInput" class="form-control" placeholder="Search for students...">
+                            </div>
+
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Student ID</th>
+                                        <th>Name</th>
+                                        <th>Age</th>
+                                        <th>Phone Number</th>
+                                        <th>Home Town</th>
+                                        <th>Year Start</th>
+                                        <th>Gender</th>
+                                        <th>Subjects</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="studentTableBody">
+                                    <!-- Student data will be populated here by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Update Tab Content -->
+                        <div id="grades" class="tab-pane fade">
+                            <h4>Update Student Info</h4>
+                            <!-- You can add form to update student info here -->
+                        </div>
+
+                        <!-- Add Student Tab Content -->
+                        <div id="attendance" class="tab-pane fade">
+                            <h4>Add New Student</h4>
+                            <!-- Form to add a new student -->
+                        </div>
+
+                        <!-- Add Student into Class Tab Content -->
+                        <div id="assignments" class="tab-pane fade">
+                            <h4>Assign Student to Class</h4>
+                            <!-- You can add a form or options to assign students to classes here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teacher Tab Content -->
+        <div id="teacher" class="tab-pane fade">
+			<h3>Teacher Menu</h3
+
+			   <div class="row">
+			       <div class="col-sm-3">
+			           <!-- Navigation menu for Teacher functionalities (vertical) -->
+			           <ul class="nav nav-pills flex-column">
+			               <li class="nav-item"><a class="nav-link active" data-bs-toggle="pill" href="#searchTeacher">Search</a></li>
+			               <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#updateTeacher">Update</a></li>
+			               <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#addTeacher">Add</a></li>
+			               <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#assignTeacher">Assign Teacher to Class</a></li>
+			           </ul>
+			       </div>
+
+			       <div class="col-sm-9">
+			           <!-- Tab content for Teacher Menu -->
+			           <div class="tab-content">
+			               <!-- Search Tab Content for Teacher -->
+			               <div id="searchTeacher" class="tab-pane fade show active">
+			                   <h4>Search Teachers</h4>
+			                   <div class="mb-3">
+			                       <input type="text" id="searchTeacherInput" class="form-control" placeholder="Search for teachers...">
+			                   </div>
+
+			                   <table class="table table-bordered table-striped">
+			                       <thead>
+			                           <tr>
+			                               <th>Teacher ID</th>
+			                               <th>Name</th>
+			                               <th>Age</th>
+			                               <th>Phone Number</th>
+			                               <th>Home Town</th>
+			                               <th>Subjects</th>
+			                               <th>Actions</th>
+			                           </tr>
+			                       </thead>
+			                       <tbody id="teacherTableBody">
+			                           <!-- Teacher data will be populated here by JavaScript -->
+			                       </tbody>
+			                   </table>
+			               </div>
+
+			               <!-- Update Teacher Info Tab Content -->
+			               <div id="updateTeacher" class="tab-pane fade">
+			                   <h4>Update Teacher Info</h4>
+			                   <!-- Add form to update teacher info here -->
+			               </div>
+
+			               <!-- Add Teacher Tab Content -->
+			               <div id="addTeacher" class="tab-pane fade">
+			                   <h4>Add New Teacher</h4>
+			                   <!-- Form to add a new teacher -->
+			               </div>
+
+			               <!-- Assign Teacher to Class Tab Content -->
+			               <div id="assignTeacher" class="tab-pane fade">
+			                   <h4>Assign Teacher to Class</h4>
+			                   <!-- Form or options to assign teachers to classes -->
+			               </div>
+			           </div>
+			       </div>
+			   </div>
+        </div>
+
+        <!-- Other Tab Contents -->
+        <div id="classofstudent" class="tab-pane fade">
+            <h3>Class of Student Menu</h3>
+        </div>
+
+        <div id="subject" class="tab-pane fade">
+            <h3>Subject Menu</h3>
+        </div>
+
+        <div id="menu5" class="tab-pane fade">
+            <h3>Menu 5</h3>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        <p>&copy; 2024 Admin Dashboard. All rights reserved.</p>
+    </footer>
+</div>
+
+<script>
+// Fetch students from the API and display in the table
+async function fetchStudents() {
+    try {
+        const response = await fetch('http://localhost:8081/students');
+        const students = await response.json();
+
+        const tableBody = document.getElementById('studentTableBody');
+        tableBody.innerHTML = '';
+
+        students.forEach(student => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${student.studentId}</td>
+                <td>${student.name}</td>
+                <td>${student.age}</td>
+                <td>${student.phoneNumber}</td>
+                <td>${student.homeTown}</td>
+                <td>${student.yearStart}</td>
+                <td>${student.gender}</td>
+                <td>${formatStudentSubjects(student.subjects)}</td>
+                <td>
+                    <a href="/editStudent/${student.studentId}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="/deleteStudent/${student.studentId}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            `;
+            tableBody.appendChild(row);
+        });
+    } catch (error) {
+        console.error('Error fetching student data:', error);
+    }
+}
+
+function formatStudentSubjects(subjects) {
+	if (Array.isArray(subjects) && subjects.length > 0) {
+	        // Nối tên các môn học lại thành chuỗi
+	        return subjects.map(subject => subject.name).join(', ');
+	    }
+	    return 'No subjects available'; // Nếu không có môn học, hiển thị thông báo
+}
+
+// Fetch data when page loads
+fetchStudents();
+</script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        body {
+            background: #f4f7fc;
+            font-family: 'Arial', sans-serif;
+        }
+        .bg-primary {
+            background-image: url('https://source.unsplash.com/1600x900/?office,technology');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+            padding: 60px 0;
+        }
+        .bg-primary::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #007bff;
+        }
+        .header-logo img {
+            max-width: 100%;
+            height: auto;
+            width: 400px; /* Thay đổi kích thước logo */
+            object-fit: contain; /* Đảm bảo logo không bị méo */
+        }
+        .header-right .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover; /* Cắt ảnh nếu cần */
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+        .header-right .nav-link {
+            color: #fff;
+            text-decoration: none;
+        }
+		.header-right .nav-link:hover {
+		            color: #00BFFF; /* Màu xanh dương sáng khi hover */
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Header Section -->
+<header class="bg-primary text-white text-center">
+    <div class="container d-flex justify-content-between align-items-center">
+        <!-- Logo Section -->
+        <div class="header-logo">
+            <img src="https://ctt.hust.edu.vn/Images/logo.png" alt="Logo"> <!-- Thay ảnh logo của bạn ở đây -->
+        </div>
+        
+        <!-- Right Side (Login, Logout, Profile) -->
+        <div class="header-right d-flex align-items-center">
+            <img src="https://via.placeholder.com/40" alt="Avatar" class="avatar"> <!-- Thay ảnh đại diện của bạn ở đây -->
+            <a href="#" class="nav-link">Login</a>
+            <a href="#" class="nav-link ms-3">Logout</a>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container mt-5">
+    <h2>Dashboard Overview</h2>
+    <p>Welcome to the admin dashboard, where you can view, edit, and manage all system data.</p>
+</div>
+
+<div class="container mt-5">
+    <!-- Navigation Tabs -->
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#student">Student</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#teacher">Teacher</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#classofstudent">Class of Student</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#subject">Subject</a>
+        </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content mt-3">
+        <!-- Home Tab -->
+        <div id="home" class="tab-pane fade show active">
+            <h3>HOME</h3>
+            <p>Welcome to the Admin Dashboard.</p>
+        </div>
+
+        <!-- Student Tab -->
+        <div id="student" class="tab-pane fade">
+            <h3>Student Management</h3>
+            <div class="row">
+                <div class="col-md-3">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item"><a class="nav-link active" data-bs-toggle="pill" href="#list">List Students</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#search">Search</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#attendance">Add Student</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#assignments">Assign to Class</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="tab-content">
+                        <!-- Search Tab Content -->
+                        <div id="list" class="tab-pane fade show active">
+                            <h4>List Students</h4>
+                            <input type="text" id="searchInput" class="form-control mb-3" placeholder="List for students...">
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Student ID</th>
+                                        <th>Name</th>
+                                        <th>Age</th>
+                                        <th>Phone</th>
+                                        <th>homeTown</th>
+										<th>yearStart</th>
+										<th>Gender</th>
+										<th>Subjects</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="studentTableBody">
+                                    <!-- Student data will be populated here by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+
+						<div class="tab-pane fade show active" id="search">
+						    <h4>Tìm Học Sinh</h4>
+							<!-- Ô nhập MSSV -->
+							<input type="text" id="searchInput2" class="form-control mb-3" placeholder="Nhập mã số sinh viên...">
+
+							<!-- Nút tìm kiếm -->
+							<button id="searchButton" class="btn btn-primary">Tìm kiếm</button>
+
+							<!-- Bảng kết quả tìm kiếm -->
+							<table class="table table-striped table-bordered">
+							    <thead>
+									<tr>
+									                                        <th>Student ID</th>
+									                                        <th>Name</th>
+									                                        <th>Age</th>
+									                                        <th>Phone</th>
+									                                        <th>homeTown</th>
+																			<th>yearStart</th>
+																			<th>Gender</th>
+																			<th>Subjects</th>
+									                                        <th>Actions</th>
+									 </tr>
+							    </thead>
+							    <tbody id="searchResults">
+							        <!-- Dữ liệu tìm kiếm sẽ được hiển thị ở đây -->
+							    </tbody>
+							</table>
+						</div>
+
+                        <!-- Add Student Tab Content -->
+                        <div id="attendance" class="tab-pane fade">
+                            <h4>Add New Student</h4>
+                            <!-- Form for adding a new student -->
+                        </div>
+
+                        <!-- Assign Student to Class -->
+                        <div id="assignments" class="tab-pane fade">
+                            <h4>Assign Student to Class</h4>
+                            <!-- Add form to assign students to classes -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teacher Tab -->
+        <div id="teacher" class="tab-pane fade">
+            <h3>Teacher Management</h3>
+            <div class="row">
+                <div class="col-md-3">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item"><a class="nav-link active" data-bs-toggle="pill" href="#searchTeacher">Search Teachers</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#updateTeacher">Update</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#addTeacher">Add Teacher</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#assignTeacher">Assign Teacher to Class</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="tab-content">
+                        <div id="searchTeacher" class="tab-pane fade show active">
+                            <h4>Search Teachers</h4>
+                            <input type="text" id="searchTeacherInput" class="form-control mb-3" placeholder="Search for teachers...">
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Teacher ID</th>
+                                        <th>Name</th>
+                                        <th>Age</th>
+                                        <th>Phone</th>
+                                        <th>Quê quán</th>
+										<th>Subjects</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="teacherTableBody">
+                                    <!-- Teacher data will be populated here by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Add Teacher Tab Content -->
+                        <div id="addTeacher" class="tab-pane fade">
+                            <h4>Add New Teacher</h4>
+                            <!-- Form for adding new teacher -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <!-- Class of Student Tab -->
+<div id="classofstudent" class="tab-pane fade">
+    <h3>Class of Students</h3>
+    <div class="row">
+        <!-- Navigation Tabs -->
+        <div class="col-md-3">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="pill" href="#viewClasses">View Classes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="pill" href="#addClass">Add Class</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="pill" href="#updateClass">Update Class</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="pill" href="#assignClass">Assign Class to Teacher</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="col-md-9">
+            <div class="tab-content">
+                <!-- View Classes Tab -->
+                <div id="viewClasses" class="tab-pane fade show active">
+                    <h4>View Classes</h4>
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Class ID</th>
+                                <th>Class Name</th>
+                                <th>Number of Students</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="classTableBody">
+                            <!-- Class data will be populated here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Add Class Tab -->
+                <div id="addClass" class="tab-pane fade">
+                    <h4>Add New Class</h4>
+                    <form id="addClassForm">
+                        <div class="mb-3">
+                            <label for="classIdInput" class="form-label">Class ID</label>
+                            <input type="text" id="classIdInput" class="form-control" placeholder="Enter Class ID">
+                        </div>
+                        <div class="mb-3">
+                            <label for="classNameInput" class="form-label">Class Name</label>
+                            <input type="text" id="classNameInput" class="form-control" placeholder="Enter Class Name">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Class</button>
+                    </form>
+                </div>
+
+                <!-- Update Class Tab -->
+                <div id="updateClass" class="tab-pane fade">
+                    <h4>Update Class</h4>
+                    <!-- Form for updating existing class -->
+                    <!-- Placeholder for form content -->
+                </div>
+
+                <!-- Assign Class Tab -->
+                <div id="assignClass" class="tab-pane fade">
+                    <h4>Assign Class to Teacher</h4>
+                    <!-- Form for assigning class to teacher -->
+                    <!-- Placeholder for form content -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Subject Tab -->
+        <div id="subject" class="tab-pane fade">
+            <h3>Subject Management</h3>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2024 Admin Dashboard. All rights reserved.</p>
+    </footer>
+</div>
+<script>
+<!-- Script to populate tables dynamically -->
+async function fetchStudents() {
+    try {
+        const response = await fetch('http://localhost:8081/students');
+        const students = await response.json();
+
+        const tableBody = document.getElementById('studentTableBody');
+        tableBody.innerHTML = '';
+
+        students.forEach(student => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${student.studentId}</td>
+                <td>${student.name}</td>
+                <td>${student.age}</td>
+                <td>${student.phoneNumber}</td>
+                <td>${student.homeTown}</td>
+                <td>${student.yearStart}</td>
+                <td>${student.gender}</td>
+                <td>${formatStudentSubjects(student.subjects)}</td>
+                <td>
+                    <a href="/editStudent/${student.studentId}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="/deleteStudent/${student.studentId}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            `;
+            tableBody.appendChild(row);
+        });
+    } catch (error) {
+        console.error('Error fetching student data:', error);
+    }
+}
+
+function formatStudentSubjects(subjects) {
+	if (Array.isArray(subjects) && subjects.length > 0) {
+	        // Nối tên các môn học lại thành chuỗi
+	        return subjects.map(subject => subject.name).join(', ');
+	    }
+	    return 'No subjects available'; // Nếu không có môn học, hiển thị thông báo
+}
+
+// Fetch data when page loads
+fetchStudents();
+</script>
+
+<script>
+// Fetch teachers from the API and display in the table
+async function fetchTeachers() {
+    try {
+        const response = await fetch('http://localhost:8081/teachers');
+        const teachers = await response.json();
+
+        const tableBody = document.getElementById('teacherTableBody');
+        tableBody.innerHTML = ''; // Xóa nội dung cũ
+
+        teachers.forEach(teacher => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${teacher.teacherId}</td>
+                <td>${teacher.name}</td>
+                <td>${teacher.age}</td>
+                <td>${teacher.phoneNumber}</td>
+                <td>${teacher.homeTown}</td>
+                <td>${formatTeacherSubjects(teacher.subject)}</td> <!-- Hiển thị môn học -->
+                <td>
+                    <a href="/editTeacher/${teacher.teacherId}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="/deleteTeacher/${teacher.teacherId}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            `;
+            tableBody.appendChild(row);
+        });
+    } catch (error) {
+        console.error('Error fetching teacher data:', error);
+    }
+}
+
+// Hàm formatSubjects 
+function formatTeacherSubjects(subjects) {
+    if (Array.isArray(subjects) && subjects.length > 0) {
+        // Nối tên các môn học lại thành chuỗi
+        return subjects.map(subject => subject.name).join(', ');
+    }
+    return 'No subjects available'; // Nếu không có môn học, hiển thị thông báo
+}
+
+// Fetch data when page loads
+fetchTeachers();
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Gắn sự kiện click sau khi trang đã tải xong
+        document.getElementById("searchButton").addEventListener("click", async function() {
+            const studentId = document.getElementById("searchInput2").value.trim(); // Lấy giá trị MSSV từ input
+
+            console.log(studentId); // In giá trị của MSSV vào console để kiểm tra
+
+            if (studentId) {
+                const apiUrl = `http://localhost:8081/students/${studentId}`; // API URL tìm học sinh theo studentId
+
+                try {
+                    // Gửi yêu cầu fetch tới API
+                    const response = await fetch(apiUrl);
+
+                    // Kiểm tra xem phản hồi có thành công không
+                    if (!response.ok) {
+                        throw new Error('Không tìm thấy học sinh');
+                    }
+
+                    // Chuyển đổi phản hồi thành JSON
+                    const data = await response.json();
+
+                    // Xóa kết quả tìm kiếm cũ
+                    const tbody = document.getElementById("searchResults");
+                    tbody.innerHTML = "";
+
+                    // Hiển thị thông tin học sinh
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${data.studentId}</td>
+                        <td>${data.name}</td>
+                        <td>${data.age}</td>
+                        <td>${data.phoneNumber}</td>
+                        <td><button class="btn btn-warning">Edit</button> <button class="btn btn-danger">Delete</button></td>
+                    `;
+                    tbody.appendChild(row);
+                } catch (error) {
+                    // Xử lý lỗi khi không tìm thấy học sinh hoặc API gặp vấn đề
+                    console.error('Error fetching student:', error);
+                    alert('Không tìm thấy học sinh với ID đã nhập.');
+                }
+            } else {
+                alert('Vui lòng nhập mã số sinh viên (MSSV).');
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

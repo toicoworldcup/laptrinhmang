@@ -1,0 +1,29 @@
+# File Sharing Project
+
+Đây là ứng dụng chia sẻ file với các chức năng:
+
+- Đăng ký tài khoản
+- Đăng nhập và quản lý phiên người dùng
+- Tạo nhóm và tham gia nhóm chia sẻ file
+- Upload và Download file
+
+## Cài đặt
+
+1. Cài đặt MySQL và tạo cơ sở dữ liệu `file_sharing`.
+2. Cấu hình MySQL trong tệp `config.properties`.
+3. Biên dịch và chạy server:
+    ```bash
+    javac -cp "lib/mysql-connector-java.jar" src/server/*.java
+    java -cp "lib/mysql-connector-java.jar:src" server.FileSharingServer
+    ```
+4. Biên dịch và chạy client:
+    ```bash
+    javac -cp "lib/mysql-connector-java.jar" src/client/*.java
+    java -cp "lib/mysql-connector-java.jar:src" client.FileSharingClient
+    ```
+
+## Yêu cầu
+
+- JDK 8 trở lên.
+- MySQL đã được cài đặt và cấu hình.
+- Thư viện `mysql-connector-java` cần được đặt trong thư mục `lib/`.

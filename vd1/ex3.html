@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo"></p>
+<script>
+var parser, xmlDoc;
+var text = "<bookstore><book>" +
+"<title>Everyday Italian</title>" +
+"<author>Giada De Laurentiis</author>" +
+"<year>2005</year>" +
+"</book></bookstore>";
+parser = new DOMParser();
+xmlDoc = parser.parseFromString(text,"application/xml");
+document.querySelector("#demo").innerHTML =
+xmlDoc.querySelector("year").textContent;
+document.querySelector("#demo").innerHTML =
+xmlDoc.querySelector("author").textContent;
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom styling to enhance the login page appearance */
+    .login-container {
+      max-width: 400px;
+      margin: 80px auto;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .btn-group-justified {
+      display: flex;
+      width: 100%;
+    }
+    .btn-group-justified .btn-group {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container login-container">
+  <!-- Login Form -->
+  <h2 class="text-center mb-4">Login</h2>
+
+  <!-- Role-specific buttons -->
+  <div class="mt-4">
+    <h5 class="text-center">Roles</h5> 
+    <div class="btn-group btn-group-justified">
+      <div class="btn-group">
+        <!-- Link to admin_dashboard.html in static directory -->
+        <a href="/admin_dashboard" class="btn btn-danger">Login as Admin</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript to enable Bootstrap functionality -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
